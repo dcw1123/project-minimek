@@ -1,4 +1,4 @@
-import {ORM } from "redux-orm";
+import { ORM } from "redux-orm";
 
 import Pilot from "features/pilots/Pilot";
 import MechDesign from "features/mechs/MechDesign";

@@ -1,1 +1,1 @@
-export {default} from "./MechDetails";
+export { default } from "./MechDetails";

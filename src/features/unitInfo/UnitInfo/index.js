@@ -1,1 +1,1 @@
-export {default} from "./UnitInfo";
+export { default } from "./UnitInfo";

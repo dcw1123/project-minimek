@@ -1,63 +1,63 @@
-import React, {Component} from "react";
-import {connect} from "react-redux";
+import React, { Component } from "react";
+import { connect } from "react-redux";
 import {
-    Modal,
-    Button,
+	Modal,
+	Button,
 } from "semantic-ui-react";
 
-import {SketchPicker} from "react-color";
+import { SketchPicker } from "react-color";
 
-import {closeModal} from "features/modals/modalActions";
-import {colorSelected} from "./colorPickerActions";
+import { closeModal } from "features/modals/modalActions";
+import { colorSelected } from "./colorPickerActions";
 
-const actions = {closeModal, colorSelected};
+const actions = { closeModal, colorSelected };
 
 export class ColorPickerDialog extends Component {
-    constructor(props) {
-        super();
-        this.state = {
-            color : props.color
-        }
-    }
+	constructor(props) {
+		super();
+		this.state = {
+			color: props.color
+		};
+	}
 
-    onSelectClicked = () => {
-        this.props.colorSelected(this.state.color, this.props.onColorPicked);
+	onSelectClicked = () => {
+		this.props.colorSelected(this.state.color, this.props.onColorPicked);
 
-        this.props.closeModal();
-    }
+		this.props.closeModal();
+	}
 
-    onSelectedColorChanged = (colorEvent) => {
-        this.setState({color : colorEvent.hex});
-    }
+	onSelectedColorChanged = (colorEvent) => {
+		this.setState({ color: colorEvent.hex });
+	}
 
-    render() {
-        const {closeModal} = this.props;
+	render() {
+		const { closeModal } = this.props;
 
-        return (
-            <Modal
-                closeIcon="close"
-                open={true}
-                onClose={closeModal}
-                size="small"
-            >
-                <Modal.Header>Select Color</Modal.Header>
-                <Modal.Content>
-                    <SketchPicker
-                        color={this.state.color}
-                        onChangeComplete={this.onSelectedColorChanged}
-                    />
-                </Modal.Content>
-                <Modal.Actions>
-                    <Button positive onClick={this.onSelectClicked}>Select</Button>
-                    <Button secondary onClick={closeModal}>Cancel</Button>
-                </Modal.Actions>
-            </Modal>
-        )
-    }
+		return (
+			<Modal
+				closeIcon="close"
+				open={ true }
+				onClose={ closeModal }
+				size="small"
+			>
+				<Modal.Header>Select Color</Modal.Header>
+				<Modal.Content>
+					<SketchPicker
+						color={ this.state.color }
+						onChangeComplete={ this.onSelectedColorChanged }
+					/>
+				</Modal.Content>
+				<Modal.Actions>
+					<Button positive={ true } onClick={ this.onSelectClicked }>Select</Button>
+					<Button secondary={ true } onClick={ closeModal }>Cancel</Button>
+				</Modal.Actions>
+			</Modal>
+		);
+	}
 }
 
 ColorPickerDialog.defaultProps = {
-    color : "red"
+	color: "red"
 };
 
 

@@ -1,13 +1,13 @@
-import {createSelector} from "reselect";
+import { createSelector } from "reselect";
 
 export const selectPilots = state => state.pilots;
 
 export const selectCurrentPilot = createSelector(
-    selectPilots,
-    pilots => pilots.currentPilot,
+	selectPilots,
+	pilots => pilots.currentPilot,
 );
 
 export const selectIsEditingPilot = createSelector(
-    selectPilots,
-    pilots => pilots.isEditing
+	selectPilots,
+	pilots => pilots.isEditing
 );

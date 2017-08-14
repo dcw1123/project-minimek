@@ -1,34 +1,34 @@
-import React, {Component} from "react";
-import {connect} from "react-redux";
+import React, { Component } from "react";
+import { connect } from "react-redux";
 import {
-    Segment,
-    Button,
+	Segment,
+	Button,
 } from "semantic-ui-react";
 
-import {loadUnitData} from "../toolActions";
-import {showContextMenu} from "features/contextMenus/contextMenuActions";
+import { loadUnitData } from "../toolActions";
+import { showContextMenu } from "features/contextMenus/contextMenuActions";
 
 
 
-const actions = {loadUnitData, showContextMenu};
+const actions = { loadUnitData, showContextMenu };
 
 class Tools extends Component {
 
-    onShowContextMenuClicked = () => {
-        this.props.showContextMenu(600, 200, "TestContextMenu", {text : "Blah"});
-    }
+	onShowContextMenuClicked = () => {
+		this.props.showContextMenu(600, 200, "TestContextMenu", { text: "Blah" });
+	}
 
-    render() {
-        const {loadUnitData} = this.props;
-        
-        return (
-            <Segment attached="bottom">
-                <Button onClick={loadUnitData}>Reload Unit Data</Button>
-                <Button primary onClick={this.onShowContextMenuClicked}>Show Test Context Menu</Button>
+	render() {
+		const { loadUnitData } = this.props;
 
-            </Segment>
-        )
-    }
+		return (
+			<Segment attached="bottom">
+				<Button onClick={ loadUnitData }>Reload Unit Data</Button>
+				<Button primary={ true } onClick={ this.onShowContextMenuClicked }>Show Test Context Menu</Button>
+
+			</Segment>
+		);
+	}
 }
 
 export default connect(null, actions)(Tools);

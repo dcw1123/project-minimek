@@ -1,1 +1,1 @@
-export {default} from "./Pilots";
+export { default } from "./Pilots";

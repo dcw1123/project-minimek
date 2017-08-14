@@ -1,21 +1,21 @@
-import {isObject} from "lodash";
+import { isObject } from "lodash";
 
 export function getValueFromEvent(e) {
-    const {target} = e;
+	const { target } = e;
 
-    let newValues;
+	let newValues;
 
-    if(target) {
-        const value = (target.type === "checkbox") ? target.checked : target.value;
-        newValues = {
-            [target.name] : value,
-        };
-    }
-    else if(isObject(e)) {
-        newValues = e;
-    }
+	if(target) {
+		const value = (target.type === "checkbox") ? target.checked : target.value;
+		newValues = {
+			[target.name]: value,
+		};
+	}
+	else if(isObject(e)) {
+		newValues = e;
+	}
 
-    return newValues;
+	return newValues;
 }
 
 export const noop = () => {};

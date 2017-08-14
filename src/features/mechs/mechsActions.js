@@ -1,8 +1,8 @@
-import {MECH_SELECT} from "./mechsConstants";
+import { MECH_SELECT } from "./mechsConstants";
 
 export function selectMech(mechID) {
-    return {
-        type : MECH_SELECT,
-        payload : {currentMech : mechID},
-    };
+	return {
+		type: MECH_SELECT,
+		payload: { currentMech: mechID },
+	};
 }

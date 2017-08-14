@@ -1,5 +1,5 @@
 import sampleData from "./sampleData";
 
 export function fetchData() {
-    return Promise.resolve(sampleData);
+	return Promise.resolve(sampleData);
 }

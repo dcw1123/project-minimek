@@ -1,4 +1,4 @@
-import {createSelector} from "reselect";
+import { createSelector } from "reselect";
 
 import orm from "app/schema";
 
@@ -6,6 +6,6 @@ import orm from "app/schema";
 export const selectEditingEntities = state => state.editingEntities;
 
 export const getEditingEntitiesSession = createSelector(
-    selectEditingEntities,
-    editingEntities => orm.session(editingEntities)
+	selectEditingEntities,
+	editingEntities => orm.session(editingEntities)
 );
